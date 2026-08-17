@@ -1,0 +1,4 @@
+scenario,stiffness_n_m,damping_n_s_m,friction_coefficient,base_scan_speed_m_s,peak_command_force_n,rms_command_force_n,mean_vibration_amplitude,safety_event_samples
+soft_tissue,650.0,7.0,0.18,0.035,3.791452,2.281724,0.089458,12
+fibrous_tissue,950.0,11.0,0.26,0.042,5.635787,3.392246,0.269525,20
+smooth_membrane,1200.0,5.0,0.12,0.028,6.0,3.9405,0.03034,463

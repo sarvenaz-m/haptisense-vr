@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: "HaptiSense VR: Multimodal Haptic Research Prototype"
+message: "If this software supports your research, please cite it using this metadata."
+type: software
+authors:
+  - family-names: "Mahmoudzadeh Khameneh"
+    given-names: "Sarvenaz"
+version: 0.2.0
+date-released: 2026-08-16
+license: MIT
+keywords:
+  - haptics
+  - virtual reality
+  - psychophysics
+  - surgical simulation
+repository-code: "https://github.com/sarvenaz-m/haptisense-vr"
