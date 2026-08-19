@@ -2,7 +2,9 @@
 
 This folder contains a minimal engine-side integration for the Python bridge.
 It is deliberately source-only so reviewers can inspect the C# without a large
-binary Unity project.
+binary Unity project. The assembly definition makes the scripts import-ready,
+but this repository does not claim a verified build in a particular Unity
+editor version.
 
 ## Scene setup
 
@@ -14,6 +16,10 @@ binary Unity project.
 
 The publisher sends contact state to UDP port 9051. The receiver listens for
 safety-limited commands on port 9050. Both use loopback by default.
+
+Complete the [integration checklist](INTEGRATION_CHECKLIST.md) and retain the
+editor version, Console output, and a short scene recording before presenting
+this path as a runnable Unity demonstration.
 
 ## Important limitation
 

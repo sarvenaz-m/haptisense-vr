@@ -6,6 +6,7 @@
 - **Safety after synthesis:** every command passes through one stateful limit layer.
 - **Explicit units:** all core calculations use SI units.
 - **Reproducibility:** simulations and synthetic observers are deterministic with fixed parameters/seeds.
+- **Cross-runtime parity:** automated tests compare the 500 Hz browser model with the Python reference scenarios.
 - **Honest evidence:** generated outputs identify themselves as synthetic.
 
 ## Data flow
@@ -62,10 +63,15 @@ Amplitude combines roughness, normalized contact load, and speed.
 
 ## Timing
 
-The Python demo defaults to 500 Hz to generate readable deterministic traces.
+The Python and browser demos both default to 500 Hz and use equivalent vector
+contact, inertial, synthesis, and safety calculations. The browser staircase is
+drawn from the committed synthetic trial records rather than regenerated with a
+second random-number implementation.
+
 A real haptic device may require a higher device-specific servo rate (often
-near 1 kHz). The Unity bridge is supervisory and is not presented as a
-hard-real-time servo implementation.
+near 1 kHz). The 500 Hz value in this repository is a simulation sample rate,
+not measured hardware throughput. The Unity bridge is supervisory and is not
+presented as a hard-real-time servo implementation.
 
 ## Extension points
 

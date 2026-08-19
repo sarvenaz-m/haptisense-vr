@@ -7,8 +7,12 @@
   <meta name="theme-color" content="#0b2036">
   <meta property="og:title" content="HaptiSense VR — Interactive Research Demonstrator">
   <meta property="og:description" content="Force, vibration, Unity integration, surgical contact, and adaptive psychophysics in one reproducible workbench.">
-  <meta property="og:image" content="https://sarvenaz-m.github.io/haptisense-vr/assets/hero.svg">
+  <meta property="og:image" content="https://sarvenaz-m.github.io/haptisense-vr/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <title>HaptiSense VR — Interactive Research Demonstrator</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -30,15 +34,15 @@
   <main id="top">
     <section class="hero section-wrap">
       <div class="hero-copy">
-        <div class="eyebrow"><span></span> Independent research demonstrator · v0.2</div>
+        <div class="eyebrow"><span></span> Independent research demonstrator · v0.2.1</div>
         <h1>From virtual contact<br>to a <em>perceptible cue.</em></h1>
         <p class="hero-lead">A reproducible haptics workbench for body-grounded force cues, force–vibration synthesis, surgical contact modelling, Unity integration, and adaptive psychophysics.</p>
         <div class="hero-actions">
           <a class="button primary" href="#lab">Run the interactive model</a>
-          <a class="button secondary" href="https://github.com/sarvenaz-m/haptisense-vr/blob/main/docs/GRANT_EVIDENCE_MATRIX.md">Review grant alignment</a>
+          <a class="button secondary" href="https://github.com/sarvenaz-m/haptisense-vr/blob/main/docs/RESEARCH_EVIDENCE_MATRIX.md">Review technical evidence</a>
         </div>
         <div class="hero-meta">
-          <div><strong>13</strong><span>automated tests</span></div>
+          <div><strong>17</strong><span>automated tests</span></div>
           <div><strong>500 Hz</strong><span>deterministic demo</span></div>
           <div><strong>3</strong><span>tissue scenarios</span></div>
         </div>
@@ -71,7 +75,7 @@
           <span class="kicker">Interactive laboratory</span>
           <h2>Tune contact. Observe perception.</h2>
         </div>
-        <p>Change the virtual tissue and tool motion. The model recomputes compliant contact, friction, inertial reaction, vibration, and the safety-gated command in real time.</p>
+        <p>Change the virtual tissue and tool motion. The page runs the same 500 Hz vector contact, inertial, vibration, and safety model as the Python reference implementation.</p>
       </div>
 
       <div class="preset-row" role="group" aria-label="Tissue preset">
@@ -124,7 +128,7 @@
         <div class="psych-copy">
           <span class="kicker">Perceptual acuity · synthetic observer</span>
           <h3>Adaptive 2AFC staircase</h3>
-          <p>Two correct responses reduce the stimulus difference; one error increases it. Late reversal levels provide a reproducible threshold estimate for the experiment pipeline.</p>
+          <p>Two correct responses reduce the stimulus difference; one error increases it. The chart reproduces the same committed synthetic trials and threshold summary as the Python pipeline.</p>
           <div class="thresholds">
             <div><span>Visual threshold</span><b>0.040</b></div>
             <div><span>Haptic threshold</span><b>0.0675</b></div>
@@ -138,7 +142,7 @@
       <div class="section-wrap">
         <div class="section-heading light">
           <div><span class="kicker">Reviewer evidence path</span><h2>Each claim points to inspectable work.</h2></div>
-          <p>The repository separates what is implemented now, what connects to earlier AKO R&amp;D experience, and what still requires laboratory validation.</p>
+          <p>The repository separates implemented software evidence from the hardware, participant, and clinical validation that still requires laboratory work.</p>
         </div>
         <div class="evidence-grid">
           <article><span>01</span><h3>Substrate-free force</h3><p>Filtered apparent reaction from controller acceleration with an explicit safety clamp.</p><a href="https://github.com/sarvenaz-m/haptisense-vr/blob/main/src/haptisense/force_models.py">Inspect model →</a></article>
@@ -170,11 +174,11 @@
     <section class="ako-section section-wrap">
       <div class="ako-card">
         <div>
-          <span class="kicker">AKO experience → current demonstrator</span>
-          <h2>A traceable continuation, not a backdated claim.</h2>
+          <span class="kicker">Professional background · current scope</span>
+          <h2>A new prototype built on transferable R&amp;D skills.</h2>
         </div>
-        <p>The project translates earlier smart-healthcare, wearable-sensing, electronics–software collaboration, and human-centred R&amp;D experience into a newly packaged 2026 haptics demonstrator. Historical claims remain separate and should be supported by authentic AKO records.</p>
-        <a class="button secondary" href="https://github.com/sarvenaz-m/haptisense-vr/blob/main/docs/AKO_CASE_STUDY.md">Read the case study</a>
+        <p>Relevant AKO experience is limited here to smart-healthcare concepts, application/web development, electronics–software collaboration, and wearable-sensing concepts. EEG analysis belongs to a separate academic background. HaptiSense VR is a new independent 2026 project.</p>
+        <a class="button secondary" href="https://github.com/sarvenaz-m/haptisense-vr/blob/main/docs/BACKGROUND_AND_SCOPE.md">Read background and scope</a>
       </div>
     </section>
 
@@ -194,6 +198,8 @@
       <span>Independent portfolio research prototype</span>
     </div>
   </footer>
+  <script src="assets/haptic-model.js"></script>
+  <script src="assets/psychophysics-data.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>

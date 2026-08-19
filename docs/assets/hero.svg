@@ -25,12 +25,12 @@
     <text x="0" y="8" text-anchor="middle" fill="#fff" font-family="Georgia,serif" font-size="37" font-style="italic">F</text>
   </g>
   <g font-family="Inter,Arial,sans-serif">
-    <text x="84" y="108" fill="#52ddd4" font-size="15" font-weight="700" letter-spacing="3">INDEPENDENT RESEARCH DEMONSTRATOR · V0.2</text>
+    <text x="84" y="108" fill="#52ddd4" font-size="15" font-weight="700" letter-spacing="3">INDEPENDENT RESEARCH DEMONSTRATOR · V0.2.1</text>
     <text x="82" y="212" fill="#fff" font-size="76" font-weight="780" letter-spacing="-4">HaptiSense VR</text>
     <text x="84" y="273" fill="#b8ccd6" font-size="26">Force · Vibration · Unity · Psychophysics</text>
     <text x="84" y="347" fill="#8fa9b7" font-size="18">From virtual contact to a safe, measurable, perceptible cue.</text>
     <g transform="translate(84 403)">
-      <rect width="140" height="39" rx="8" fill="#00a6a6"/><text x="70" y="25" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">13 TESTS PASS</text>
+      <rect width="140" height="39" rx="8" fill="#00a6a6"/><text x="70" y="25" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">17 TESTS PASS</text>
       <rect x="153" width="140" height="39" rx="8" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".12"/><text x="223" y="25" text-anchor="middle" fill="#d8e6eb" font-size="13" font-weight="700">500 HZ DEMO</text>
       <rect x="306" width="160" height="39" rx="8" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".12"/><text x="386" y="25" text-anchor="middle" fill="#d8e6eb" font-size="13" font-weight="700">3 TISSUE MODES</text>
     </g>

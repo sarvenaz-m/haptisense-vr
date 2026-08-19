@@ -5,8 +5,8 @@ type: software
 authors:
   - family-names: "Mahmoudzadeh Khameneh"
     given-names: "Sarvenaz"
-version: 0.2.0
-date-released: 2026-08-16
+version: 0.2.1
+date-released: 2026-08-19
 license: MIT
 keywords:
   - haptics

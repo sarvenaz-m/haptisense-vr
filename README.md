@@ -1,57 +1,65 @@
 ![HaptiSense VR — haptic research demonstrator](docs/assets/hero.svg)
 
 <p align="center">
-  <strong>A reproducible workbench for substrate-free force cues, multimodal surgical contact, Unity integration, and perceptual-acuity experiments.</strong>
+  <strong>A reproducible workbench for body-grounded force cues, multimodal surgical contact, Unity integration, and perceptual-acuity experiments.</strong>
 </p>
 
 <p align="center">
   <a href="https://sarvenaz-m.github.io/haptisense-vr/"><strong>Launch interactive demonstrator</strong></a>
-  · <a href="docs/GRANT_EVIDENCE_MATRIX.md">Grant evidence matrix</a>
+  · <a href="docs/RESEARCH_EVIDENCE_MATRIX.md">Research evidence matrix</a>
   · <a href="docs/DEMO_SCRIPT.md">90-second reviewer tour</a>
-  · <a href="docs/AKO_CASE_STUDY.md">AKO case study</a>
+  · <a href="docs/BACKGROUND_AND_SCOPE.md">Background and scope</a>
 </p>
 
 <p align="center">
+  <a href="https://github.com/sarvenaz-m/haptisense-vr/actions/workflows/ci.yml"><img alt="Python and web-model tests" src="https://github.com/sarvenaz-m/haptisense-vr/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/sarvenaz-m/haptisense-vr/actions/workflows/pages.yml"><img alt="GitHub Pages deployment" src="https://github.com/sarvenaz-m/haptisense-vr/actions/workflows/pages.yml/badge.svg"></a>
   <img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-17324D">
-  <img alt="13 tests" src="https://img.shields.io/badge/tests-13%20passing-00A6A6">
-  <img alt="C sharp Unity" src="https://img.shields.io/badge/Unity-C%23-17324D">
+  <img alt="Unity C sharp source" src="https://img.shields.io/badge/Unity-C%23%20source-17324D">
   <img alt="Synthetic evidence" src="https://img.shields.io/badge/evidence-synthetic%20%7C%20reproducible-F17463">
   <img alt="MIT license" src="https://img.shields.io/badge/license-MIT-17324D">
 </p>
 
-## Why this repository exists
+## Overview
 
-HaptiSense VR is an independent 2026 portfolio project by **Sarvenaz Mahmoudzadeh Khameneh**. It turns a research profile spanning intelligent healthcare, real-time software, sensor/device integration, EEG analysis, and human-centred prototyping into inspectable technical evidence.
+HaptiSense VR is an independent 2026 portfolio research prototype by
+**Sarvenaz Mahmoudzadeh Khameneh**. It turns three haptics questions into
+inspectable models, tests, structured outputs, and an interactive workbench:
 
-The repository answers three concrete questions:
-
-1. Can a body-grounded inertial cue approximate transient force feedback when no fixed substrate is available?
-2. Can compliant force and cutaneous vibration be synthesized coherently for virtual surgical contact?
-3. Can visual and haptic acuity be measured with a reproducible adaptive psychophysics workflow?
+1. Can transient body-grounded inertial cues approximate force feedback when
+   no fixed substrate is available?
+2. Can compliant force and cutaneous vibration be synthesised coherently for
+   virtual surgical contact?
+3. Can visual and haptic acuity be measured with a reproducible adaptive
+   psychophysics workflow?
 
 > [!IMPORTANT]
-> Committed outputs are deterministic simulations and explicitly synthetic-observer data. They demonstrate implementation and research readiness—not participant, clinical, Phantom/Geomagic, or hardware-validation results.
+> Committed outputs are deterministic simulations and explicitly
+> synthetic-observer data. They demonstrate implementation and research
+> readiness—not participant, clinical, Phantom/Geomagic, or hardware
+> validation.
 
 ## Reviewer quick path
 
 | Time | What to inspect | What it demonstrates |
 |---:|---|---|
-| 30 s | [Interactive demonstrator](https://sarvenaz-m.github.io/haptisense-vr/) | Real-time control of tissue physics, force, vibration, and safety metrics |
+| 30 s | [Interactive demonstrator](https://sarvenaz-m.github.io/haptisense-vr/) | Exact 500 Hz browser implementation of the default Python scenarios |
 | 60 s | [`force_models.py`](src/haptisense/force_models.py) + [`cues.py`](src/haptisense/cues.py) | Physics-based interaction and multimodal cue design |
-| 30 s | [`unity/`](unity/) + [`bridge.py`](src/haptisense/bridge.py) | C#/Python and hardware–software integration path |
+| 30 s | [`unity/`](unity/) + [`bridge.py`](src/haptisense/bridge.py) | C#/Python communication and a future device-integration path |
 | 45 s | [`psychophysics.py`](src/haptisense/psychophysics.py) + [protocol](docs/EXPERIMENT_PROTOCOL.md) | Adaptive 2AFC design, logging, thresholds, and ethics readiness |
-| 30 s | [`tests/`](tests/) + CI | Reproducibility and software quality |
+| 30 s | [`tests/`](tests/) + CI | Model correctness, web/Python parity, documentation links, and reproducibility |
 
 ## Live research workbench
 
-The zero-dependency browser demonstrator exposes three tissue presets and four experimental controls:
+The zero-dependency browser demonstrator exposes soft-tissue, fibrous-tissue,
+and smooth-membrane presets together with stiffness, damping, roughness, and
+scan-speed controls. Its vector contact, inertial, synthesis, and safety logic
+matches the Python implementation at 500 Hz; an automated parity test protects
+the default metrics against drift.
 
-- stiffness and damping;
-- surface roughness;
-- tool scan speed;
-- soft, fibrous, and membrane tissue scenarios.
-
-It recomputes compliant contact, friction, filtered inertial reaction, vibration frequency/amplitude, and safety interventions. It also visualizes the synthetic 2AFC staircase. Enable GitHub Pages with **Settings → Pages → GitHub Actions** to publish it.
+The staircase chart is drawn from the same committed synthetic trial records as
+`results/psychophysics/trials.csv`. The site is deployed automatically from
+`docs/` by the GitHub Pages workflow.
 
 [![Synthetic haptic output](results/demo/haptic_profile.svg)](https://sarvenaz-m.github.io/haptisense-vr/)
 
@@ -59,14 +67,14 @@ It recomputes compliant contact, friction, filtered inertial reaction, vibration
 
 | Research capability | Implementation | Inspect |
 |---|---|---|
-| Substrate-free force cues | Filtered body-grounded apparent reaction from controller acceleration | `BodyGroundedInertialCue` |
-| Physics-based contact | Kelvin–Voigt normal contact and regularized Coulomb friction | `KelvinVoigtSurface` |
+| Body-grounded force-cue model | Filtered apparent reaction from controller acceleration | `BodyGroundedInertialCue` |
+| Physics-based contact | Kelvin–Voigt normal contact and regularised Coulomb friction | `KelvinVoigtSurface` |
 | Surgical multimodality | Force-dependent amplitude and scan-speed-dependent texture frequency | `MultimodalCueSynthesizer` |
-| Safety engineering | Force, slew-rate, vibration amplitude, and frequency limits | `SafetyEnvelope` |
-| Device integration | Protocol, mock device, and loopback UDP transport | `hardware.py` |
-| Unity path | C# contact publisher, command receiver, and Python server | `unity/`, `bridge.py` |
+| Safety engineering | Force, slew-rate, vibration-amplitude, and frequency limits | `SafetyEnvelope` |
+| Device integration path | Protocol, mock device, and loopback UDP transport | `hardware.py` |
+| Unity source integration | C# contact publisher, command receiver, and Python server | `unity/`, `bridge.py` |
 | Psychophysics | 2AFC two-down/one-up staircase and reversal threshold | `psychophysics.py` |
-| Research reproducibility | Fixed seeds, structured outputs, 13 tests, CI, and demo site | `results/`, `tests/`, `.github/` |
+| Reproducibility | Fixed seeds, structured outputs, 17 tests, CI, and demo site | `results/`, `tests/`, `.github/` |
 
 ## Quick start
 
@@ -79,13 +87,14 @@ python3 -m pip install -e .
 
 haptisense demo --output results/demo
 haptisense psychophysics --output results/psychophysics
+haptisense compare --output results/comparison
 python3 -m unittest discover -s tests -v
 ```
 
 Expected validation:
 
 ```text
-Ran 13 tests
+Ran 17 tests
 OK
 ```
 
@@ -101,11 +110,15 @@ flowchart LR
     F --> G["Psychophysics analysis"]
 ```
 
-All scientific calculations use SI units. Models are separated from game-engine and hardware transports so that a supported Phantom/Geomagic, wearable actuator, or custom embedded controller can be added without rewriting the research logic. See the [technical architecture](docs/ARCHITECTURE.md).
+All scientific calculations use SI units. Models are separated from the game
+engine and hardware transports so a supported Phantom/Geomagic device,
+wearable actuator, or custom embedded controller can be added without rewriting
+the scientific core. See the [technical architecture](docs/ARCHITECTURE.md).
 
 ## Reproducible outputs
 
-The default surgical-contact scenario runs for four seconds at 500 Hz and produces 2,000 time points.
+The default surgical-contact scenario runs for four seconds at 500 Hz and
+produces 2,000 samples.
 
 | Output | Contents |
 |---|---|
@@ -114,11 +127,12 @@ The default surgical-contact scenario runs for four seconds at 500 Hz and produc
 | `results/demo/haptic_profile.svg` | reviewer-friendly force/vibration trace |
 | `results/psychophysics/trials.csv` | 144 explicitly synthetic visual/haptic 2AFC records |
 | `results/psychophysics/summary.json` | reversal counts, accuracy, and threshold estimates |
-| `results/comparison/` | three-scenario comparison generated for v0.2 |
+| `results/comparison/` | three-scenario deterministic comparison |
 
 ## Unity integration
 
-The C# layer is deliberately small and inspectable:
+The repository provides import-ready C# source, not a complete Unity project or
+recorded scene:
 
 1. `HapticContactPublisher` extracts contact state from the virtual tool.
 2. `UnityBridgeServer` calculates contact, inertial, and texture cues in Python.
@@ -131,49 +145,54 @@ Start the loopback bridge with:
 haptisense bridge
 ```
 
-Unity's physics loop is not presented as a hard-real-time device servo. Proprietary drivers are not bundled, and device calibration remains a laboratory validation step.
+Unity's physics loop is not presented as a hard-real-time device servo.
+Proprietary drivers are not bundled, and compilation inside a specific Unity
+editor version plus device calibration remain explicit validation steps.
 
 ## Psychophysics protocol
 
-The pipeline independently exercises visual and haptic discrimination with a two-down/one-up 2AFC staircase. The formal protocol adds hypotheses, counterbalancing, calibration metadata, exclusion rules, safety stopping, ethics requirements, and a preregistered analysis path.
+The pipeline independently exercises visual and haptic discrimination with a
+two-down/one-up 2AFC staircase. The formal protocol adds hypotheses,
+counterbalancing, calibration metadata, exclusion rules, safety stopping,
+ethics requirements, and a preregistered analysis path.
 
 Read [`docs/EXPERIMENT_PROTOCOL.md`](docs/EXPERIMENT_PROTOCOL.md).
 
-## Grant relevance
+## Background and evidence boundary
 
-The codebase provides direct supplementary evidence for VR/haptics development, physics-based interaction, Unity/C#, psychophysical study design, and hardware–software integration. It does **not** affect academic grades and does not replace authentic evidence of prior work.
+Earlier AKO experience and academic EEG work are intentionally separated.
+AKO is described only through relevant smart-healthcare concepts,
+application/web development, electronics–software collaboration, and
+wearable-sensing concepts. EEG analysis and research methods belong to the
+academic background and are not presented as AKO work.
 
-The line-by-line mapping between selection factors, files, defensible claims, and remaining validation is in [`docs/GRANT_EVIDENCE_MATRIX.md`](docs/GRANT_EVIDENCE_MATRIX.md).
+This new independent 2026 prototype is documented separately from all
+historical work. See [background and project scope](docs/BACKGROUND_AND_SCOPE.md)
+and the [research-task evidence matrix](docs/RESEARCH_EVIDENCE_MATRIX.md).
 
-## AKO continuity and evidence boundary
-
-Earlier work at **AKO Smart Technologies Group** involved smart-healthcare concepts, non-invasive monitoring, wearable sensing, and electronics–software collaboration. This repository translates that systems perspective into a modern, reproducible haptics demonstrator.
-
-It is a **current reconstruction and extension**, not a backdated AKO repository. Historical AKO work should be supported independently by authentic screenshots, reports, device photographs, code history, named collaborators, or references. See [`docs/AKO_CASE_STUDY.md`](docs/AKO_CASE_STUDY.md).
-
-## What is not claimed
+## Limitations
 
 - no completed Phantom/Geomagic calibration;
-- no measured 1 kHz hardware servo performance;
-- no clinical validation;
+- no measured 1 kHz hardware-servo performance;
+- no clinical or tissue-phantom validation;
 - no recruited participants or human-subject results;
 - no claim that this repository existed at AKO;
-- no affiliation with or endorsement by INESC-ID or HIITS.
-
-These limits are deliberate: credible scoping makes the implemented evidence stronger.
+- no affiliation with or endorsement by INESC-ID or HIITS;
+- no complete Unity project or verified editor build in this repository.
 
 ## Repository map
 
 ```text
 src/haptisense/       Scientific models, safety, device API, CLI, Unity bridge
-unity/                Inspectable C# integration example
-tests/                Thirteen standard-library unit tests
+unity/                Import-ready C# integration source and setup instructions
+tests/                Seventeen standard-library tests, including web parity
 docs/index.html       Zero-dependency interactive GitHub Pages demonstrator
-docs/                 Protocol, architecture, grant matrix, and AKO case study
+docs/                 Protocol, architecture, scope, and evidence documentation
 results/              Committed, explicitly synthetic reproducible outputs
-.github/workflows/    Python CI and GitHub Pages deployment
+.github/workflows/    Python/JavaScript CI and GitHub Pages deployment
 ```
 
 ## License and citation
 
-Released under the [MIT License](LICENSE). Citation metadata are in [`CITATION.cff`](CITATION.cff).
+Released under the [MIT License](LICENSE). Citation metadata are in
+[`CITATION.cff`](CITATION.cff).

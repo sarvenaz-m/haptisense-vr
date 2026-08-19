@@ -14,6 +14,9 @@ Show the repository hero and the research-integrity statement.
 
 Open the GitHub Pages demonstrator.
 
+The displayed default metrics are produced by the same 500 Hz vector model as
+the Python simulation; parity is checked automatically in CI.
+
 1. Select **Soft tissue**.
 2. Increase stiffness from 650 to approximately 1,000 N/m.
 3. Observe peak/RMS force increase.
@@ -53,9 +56,10 @@ Show the staircase chart and `results/psychophysics/summary.json`.
 
 Show the passing CI/tests.
 
-> Thirteen tests verify force response, friction direction, cue bounds, safety,
-> reproducibility, and bridge behavior. My next laboratory step is device
-> calibration, latency/jitter characterization, and a preregistered user study.
+> Seventeen tests verify force response, friction direction, cue bounds, safety,
+> reproducibility, browser/Python parity, documentation links, and bridge
+> behaviour. My next laboratory step is device
+> calibration, latency/jitter characterisation, and a preregistered user study.
 
 ## Do not say
 

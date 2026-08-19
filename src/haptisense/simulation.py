@@ -125,7 +125,7 @@ def _write_svg(samples: list[dict[str, float]], output_path: Path) -> None:
 <polyline fill="none" stroke="#007C83" stroke-width="3" points="{force_points}"/>
 <polyline fill="none" stroke="#ED6A5A" stroke-width="2.4" points="{vibration_points}"/>
 <text x="{left}" y="{height-20}" font-family="Arial, sans-serif" font-size="13" fill="#4A6472">Time (s)</text>
-<text transform="translate(18 {top + plot_h/2}) rotate(-90)" font-family="Arial, sans-serif" font-size="13" fill="#4A6472">Normalized display scale</text>
+<text transform="translate(18 {top + plot_h/2}) rotate(-90)" font-family="Arial, sans-serif" font-size="13" fill="#4A6472">Normalised display scale</text>
 <line x1="{width-292}" y1="24" x2="{width-262}" y2="24" stroke="#007C83" stroke-width="3"/>
 <text x="{width-254}" y="29" font-family="Arial, sans-serif" font-size="12" fill="#17324D">safe force</text>
 <line x1="{width-155}" y1="24" x2="{width-125}" y2="24" stroke="#ED6A5A" stroke-width="3"/>
