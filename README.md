@@ -197,16 +197,6 @@ This new independent 2026 prototype is documented separately from all
 historical work. See [background and project scope](docs/BACKGROUND_AND_SCOPE.md)
 and the [research-task evidence matrix](docs/RESEARCH_EVIDENCE_MATRIX.md).
 
-## Limitations
-
-- no completed Phantom/Geomagic calibration;
-- no measured 1 kHz hardware-servo performance;
-- no clinical or tissue-phantom validation;
-- no recruited participants or human-subject results;
-- no claim that this repository existed at AKO;
-- no affiliation with or endorsement by INESC-ID or HIITS;
-- no complete Unity project or verified editor build in this repository.
-
 ## Repository map
 
 ```text
