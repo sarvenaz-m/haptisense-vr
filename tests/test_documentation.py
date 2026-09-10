@@ -44,20 +44,20 @@ class DocumentationIntegrityTests(unittest.TestCase):
         self.assertEqual(missing, [], "Broken Markdown links:\n" + "\n".join(missing))
 
     def test_site_local_assets_and_fragments_resolve(self) -> None:
-        index = ROOT / "docs" / "index.html"
-        parser = _SiteReferenceParser()
-        parser.feed(index.read_text(encoding="utf-8"))
         missing: list[str] = []
-        for reference in parser.references:
-            parsed = urlsplit(reference)
-            if parsed.scheme or reference.startswith(("mailto:", "javascript:")):
-                continue
-            if parsed.path:
-                target = (index.parent / unquote(parsed.path)).resolve()
-                if not target.exists():
-                    missing.append(reference)
-            elif parsed.fragment and parsed.fragment not in parser.ids:
-                missing.append(reference)
+        for index in (ROOT / "docs").glob("*.html"):
+            parser = _SiteReferenceParser()
+            parser.feed(index.read_text(encoding="utf-8"))
+            for reference in parser.references:
+                parsed = urlsplit(reference)
+                if parsed.scheme or reference.startswith(("mailto:", "javascript:")):
+                    continue
+                if parsed.path:
+                    target = (index.parent / unquote(parsed.path)).resolve()
+                    if not target.exists():
+                        missing.append(f"{index.name}: {reference}")
+                elif parsed.fragment and parsed.fragment not in parser.ids:
+                    missing.append(f"{index.name}: {reference}")
         self.assertEqual(missing, [], "Broken site references: " + ", ".join(missing))
 
 

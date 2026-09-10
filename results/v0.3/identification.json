@@ -1,0 +1,83 @@
+{
+  "evidence": "noiseless_synthetic_self_check",
+  "training": [
+    {
+      "depth_m": 0.002,
+      "velocity_m_s": 0.003,
+      "normal_n": 1.4669999999999999
+    },
+    {
+      "depth_m": 0.002,
+      "velocity_m_s": 0.013,
+      "normal_n": 1.557
+    },
+    {
+      "depth_m": 0.002,
+      "velocity_m_s": 0.025,
+      "normal_n": 1.665
+    },
+    {
+      "depth_m": 0.004,
+      "velocity_m_s": 0.003,
+      "normal_n": 2.907
+    },
+    {
+      "depth_m": 0.004,
+      "velocity_m_s": 0.013,
+      "normal_n": 2.997
+    },
+    {
+      "depth_m": 0.004,
+      "velocity_m_s": 0.025,
+      "normal_n": 3.105
+    },
+    {
+      "depth_m": 0.006,
+      "velocity_m_s": 0.003,
+      "normal_n": 4.347
+    },
+    {
+      "depth_m": 0.006,
+      "velocity_m_s": 0.013,
+      "normal_n": 4.437
+    },
+    {
+      "depth_m": 0.006,
+      "velocity_m_s": 0.025,
+      "normal_n": 4.545
+    }
+  ],
+  "held_out": [
+    {
+      "depth_m": 0.003,
+      "velocity_m_s": 0.005,
+      "normal_n": 2.205
+    },
+    {
+      "depth_m": 0.003,
+      "velocity_m_s": 0.017,
+      "normal_n": 2.313
+    },
+    {
+      "depth_m": 0.005,
+      "velocity_m_s": 0.005,
+      "normal_n": 3.645
+    },
+    {
+      "depth_m": 0.005,
+      "velocity_m_s": 0.017,
+      "normal_n": 3.753
+    }
+  ],
+  "fit": {
+    "stiffness_n_m": 720.0000000000001,
+    "damping_n_s_m": 9.00000000000003,
+    "observations": 9,
+    "design_separation": 0.4018857854474293
+  },
+  "held_out_metrics": {
+    "observations": 4,
+    "rmse_n": 8.005932084973442e-16,
+    "max_abs_error_n": 8.881784197001252e-16
+  }
+}

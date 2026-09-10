@@ -18,6 +18,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
+    research = subparsers.add_parser("research", help="run an immutable computational contact experiment")
+    research.add_argument("--output", required=True, help="new output directory")
+    research.add_argument("--model", choices=("elastic", "kelvin", "sls"), default="sls")
+    research.add_argument("--protocol", choices=("hold", "cycle"), default="hold")
+    research.add_argument("--stiffness", type=float, default=650)
+    research.add_argument("--depth-mm", type=float, default=6)
+
     demo = subparsers.add_parser("demo", help="generate a deterministic haptic contact trace")
     demo.add_argument("--output", default="results/demo")
     demo.add_argument("--duration", type=float, default=4.0)
@@ -43,6 +50,15 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+    if args.command == "research":
+        from .research import ResearchConfig, write_research
+        try:
+            result = write_research(args.output, ResearchConfig(model=args.model, stiffness=args.stiffness,
+                                                               depth=args.depth_mm / 1000), args.protocol)
+        except (ValueError, FileExistsError) as error:
+            build_parser().error(str(error))
+        print(json.dumps(result, indent=2))
+        return 0
     if args.command == "demo":
         result = write_demo_outputs(args.output, args.duration, args.rate)
         print(json.dumps(result, indent=2))
