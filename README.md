@@ -20,6 +20,31 @@
   <img alt="MIT license" src="https://img.shields.io/badge/license-MIT-17324D">
 </p>
 
+## v0.3 · Contact mechanics studio
+
+A new computational workspace adds an orbitable contact surface, viscoelastic
+relaxation, controlled model comparison, force/penetration loops and complete
+session export/re-import. All graphics are generated locally; there are no
+external frontend dependencies.
+
+- **Inspect mechanics:** nonlinear elasticity, approach-damped Kelvin contact,
+  and a Maxwell memory branch with an exact constant-input step update.
+- **Compare fairly:** the same trajectory and shared parameters across models.
+- **Reproduce:** JSON/CSV traces, bounded configuration, immutable CLI outputs,
+  and per-sample Python/JavaScript parity across six experiments.
+- **Review integration:** a generated Unity desktop replay scene, existing UDP
+  sources and a guarded optional bench interface.
+- **Evaluate evidence:** analytic checks, held-out synthetic identification,
+  browser workflow tests and explicit validation limits.
+
+Start locally with `python -m http.server 8000 --directory docs`, then open
+`http://localhost:8000/workbench.html`. GitHub Pages publishes this route when
+the v0.3 changes are merged into `main`.
+
+[Methods and equations](docs/RESEARCH_METHODS.md) ·
+[Five-minute reviewer tour](docs/REVIEWER_TOUR.md) ·
+[Validation record](docs/VALIDATION_V03.md) · [Provenance](PROVENANCE.md)
+
 ## Overview
 
 HaptiSense VR is an independent 2026 portfolio research prototype by
@@ -43,7 +68,7 @@ inspectable models, tests, structured outputs, and an interactive workbench:
 
 | Time | What to inspect | What it demonstrates |
 |---:|---|---|
-| 30 s | [Interactive demonstrator](https://sarvenaz-m.github.io/haptisense-vr/) | Exact 500 Hz browser implementation of the default Python scenarios |
+| 30 s | [Interactive demonstrator](https://sarvenaz-m.github.io/haptisense-vr/) | Browser reproduction on a 500-sample/s model grid |
 | 60 s | [`force_models.py`](src/haptisense/force_models.py) + [`cues.py`](src/haptisense/cues.py) | Physics-based interaction and multimodal cue design |
 | 30 s | [`unity/`](unity/) + [`bridge.py`](src/haptisense/bridge.py) | C#/Python communication and a future device-integration path |
 | 45 s | [`psychophysics.py`](src/haptisense/psychophysics.py) + [protocol](docs/EXPERIMENT_PROTOCOL.md) | Adaptive 2AFC design, logging, thresholds, and ethics readiness |
@@ -54,7 +79,7 @@ inspectable models, tests, structured outputs, and an interactive workbench:
 The zero-dependency browser demonstrator exposes soft-tissue, fibrous-tissue,
 and smooth-membrane presets together with stiffness, damping, roughness, and
 scan-speed controls. Its vector contact, inertial, synthesis, and safety logic
-matches the Python implementation at 500 Hz; an automated parity test protects
+matches the Python implementation on a 2 ms model grid; an automated parity test protects
 the default metrics against drift.
 
 The staircase chart is drawn from the same committed synthetic trial records as
@@ -74,7 +99,7 @@ The staircase chart is drawn from the same committed synthetic trial records as
 | Device integration path | Protocol, mock device, and loopback UDP transport | `hardware.py` |
 | Unity source integration | C# contact publisher, command receiver, and Python server | `unity/`, `bridge.py` |
 | Psychophysics | 2AFC two-down/one-up staircase and reversal threshold | `psychophysics.py` |
-| Reproducibility | Fixed seeds, structured outputs, 17 tests, CI, and demo site | `results/`, `tests/`, `.github/` |
+| Reproducibility | Fixed seeds, structured outputs, analytical and cross-runtime tests, CI | `results/`, `tests/`, `.github/` |
 
 ## Quick start
 
@@ -91,12 +116,14 @@ haptisense compare --output results/comparison
 python3 -m unittest discover -s tests -v
 ```
 
-Expected validation:
+For v0.3, also run:
 
-```text
-Ran 17 tests
-OK
+```bash
+haptisense research --output results/my-contact-run --model sls --protocol hold
 ```
+
+This output directory must be new. For executed test counts, environments,
+screenshots and limitations, use the [validation record](docs/VALIDATION_V03.md).
 
 ## System architecture
 
@@ -117,7 +144,7 @@ the scientific core. See the [technical architecture](docs/ARCHITECTURE.md).
 
 ## Reproducible outputs
 
-The default surgical-contact scenario runs for four seconds at 500 Hz and
+The default surgical-contact scenario covers four model seconds at 500 samples/s and
 produces 2,000 samples.
 
 | Output | Contents |

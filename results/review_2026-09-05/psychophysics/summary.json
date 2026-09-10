@@ -1,0 +1,22 @@
+{
+  "data_class": "synthetic",
+  "participant_id": "SYNTHETIC-001",
+  "seed": 255,
+  "design": "2AFC, two-down/one-up adaptive staircase",
+  "trials_per_modality": 72,
+  "modalities": {
+    "visual": {
+      "estimated_threshold": 0.04,
+      "reversals": 21,
+      "accuracy": 0.763889,
+      "mean_late_reversal_level": 0.03875
+    },
+    "haptic": {
+      "estimated_threshold": 0.0675,
+      "reversals": 25,
+      "accuracy": 0.722222,
+      "mean_late_reversal_level": 0.064375
+    }
+  },
+  "warning": "Pipeline demonstration only; these are not human-subject results."
+}

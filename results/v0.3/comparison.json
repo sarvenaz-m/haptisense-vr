@@ -1,0 +1,53 @@
+{
+  "evidence": "synthetic_computational",
+  "date": "2026-09-10",
+  "python": "3.12.14",
+  "platform": "Linux x86_64",
+  "config": {
+    "model": "elastic",
+    "stiffness": 650.0,
+    "damping": 7.0,
+    "relaxation": 0.65,
+    "tau": 0.25,
+    "nonlinear": 12000.0,
+    "friction": 0.18,
+    "roughness": 0.38,
+    "spatial": 1500.0,
+    "depth": 0.006,
+    "speed": 0.035,
+    "rate": 500,
+    "duration": 4.0,
+    "force_limit": 6.0,
+    "slew_limit": 180.0
+  },
+  "protocol": "hold",
+  "models": [
+    {
+      "model": "elastic",
+      "samples": 2001,
+      "peak_command_n": 5.674552550483239,
+      "rms_command_n": 3.984845316531396,
+      "limited_samples": 0,
+      "positive_command_work_j": 0.002461433105264395,
+      "negative_command_work_j": -0.0798028442161864
+    },
+    {
+      "model": "kelvin",
+      "samples": 2001,
+      "peak_command_n": 5.675307501787883,
+      "rms_command_n": 3.991375266693164,
+      "limited_samples": 0,
+      "positive_command_work_j": 0.002461433105264395,
+      "negative_command_work_j": -0.0804560585160349
+    },
+    {
+      "model": "sls",
+      "samples": 2001,
+      "peak_command_n": 6.000000000000001,
+      "rms_command_n": 4.0928027743314646,
+      "limited_samples": 154,
+      "positive_command_work_j": 0.001754188222239489,
+      "negative_command_work_j": -0.0871790058887226
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "data_class": "deterministic scenario comparison",
+  "duration_s": 4,
+  "sample_rate_hz": 500,
+  "scenarios": {
+    "soft_tissue": {
+      "data_class": "deterministic simulation",
+      "duration_s": 4,
+      "sample_rate_hz": 500,
+      "samples": 2000,
+      "texture": "soft_tissue",
+      "parameters": {
+        "stiffness_n_m": 650.0,
+        "damping_n_s_m": 7.0,
+        "friction_coefficient": 0.18,
+        "base_scan_speed_m_s": 0.035
+      },
+      "peak_command_force_n": 3.791452,
+      "rms_command_force_n": 2.281724,
+      "mean_vibration_amplitude": 0.089458,
+      "safety_event_samples": 12,
+      "warning": "Synthetic model output; not device calibration or participant evidence."
+    },
+    "fibrous_tissue": {
+      "data_class": "deterministic simulation",
+      "duration_s": 4,
+      "sample_rate_hz": 500,
+      "samples": 2000,
+      "texture": "fibrous_tissue",
+      "parameters": {
+        "stiffness_n_m": 950.0,
+        "damping_n_s_m": 11.0,
+        "friction_coefficient": 0.26,
+        "base_scan_speed_m_s": 0.042
+      },
+      "peak_command_force_n": 5.635787,
+      "rms_command_force_n": 3.392246,
+      "mean_vibration_amplitude": 0.269525,
+      "safety_event_samples": 20,
+      "warning": "Synthetic model output; not device calibration or participant evidence."
+    },
+    "smooth_membrane": {
+      "data_class": "deterministic simulation",
+      "duration_s": 4,
+      "sample_rate_hz": 500,
+      "samples": 2000,
+      "texture": "smooth_membrane",
+      "parameters": {
+        "stiffness_n_m": 1200.0,
+        "damping_n_s_m": 5.0,
+        "friction_coefficient": 0.12,
+        "base_scan_speed_m_s": 0.028
+      },
+      "peak_command_force_n": 6.0,
+      "rms_command_force_n": 3.9405,
+      "mean_vibration_amplitude": 0.03034,
+      "safety_event_samples": 463,
+      "warning": "Synthetic model output; not device calibration or participant evidence."
+    }
+  },
+  "warning": "Synthetic model output; not tissue, device, or participant validation."
+}
