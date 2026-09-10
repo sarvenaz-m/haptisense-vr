@@ -39,9 +39,10 @@ const {
       path: path.join(out, 'workbench-desktop.png'),
       fullPage: true
     });
-    const before = await page.locator('#peak').innerText();
+    const beforeStiffness = await page.locator('#p-stiffness').inputValue();
     await page.getByLabel('ILLUSTRATIVE MATERIAL').selectOption('fibrous');
-    assert.notEqual(await page.locator('#peak').innerText(), before);
+    assert.notEqual(await page.locator('#p-stiffness').inputValue(), beforeStiffness);
+    assert.equal(await page.locator('#p-stiffness').inputValue(), '950');
     await page.getByLabel('CONTACT LAW').selectOption('elastic');
     assert.equal(await page.locator('#p-tau').isDisabled(), true);
     assert.equal(await page.locator('#memory').innerText(), '0.000 N');
